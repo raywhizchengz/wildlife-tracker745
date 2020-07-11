@@ -1,0 +1,27 @@
+{{#partial "styles"}}
+    <link rel='stylesheet' href='/css/styles.css'>
+{{/partial}}
+{{#partial "content"}}
+<h1>All rangers</h1>
+<div class="container">
+{{#each rangers}}
+        <!-- Title -->
+        <h4 class="card-title"><strong>{{name}}</strong></h4>
+
+        <h6 class="font-weight-bold indigo-text py-2">Tag No: {{tag}}</h6>
+
+        <br>
+        <br>
+
+        <a href="/rangers/{{id}}/edit"><button class="btn btn-unique">Edit ranger</button></a>
+        <form action="/rangers/{{id}}/delete" method="post">
+            <a href="/rangers/{{id}}/delete"><button class="btn btn-dark-green">Delete ranger</button></a>
+        </form>
+    </div>
+{{/each}}
+
+<div class="row text-center">
+    <a href="/rangers/new"><button class="btn btn-unique">Add New Ranger</button></a>
+</div>
+{{/partial}}
+{{> layout.hbs}}

@@ -1,0 +1,35 @@
+{{#partial "styles"}}
+    <link rel='stylesheet' href='/css/styles.css'>
+{{/partial}}
+{{#partial "content"}}
+<h1>All sightings</h1>
+
+<div class="container">
+    {{#each sightings}}
+
+            <h6 class="font-weight-bold indigo-text py-2">Sighted By: {{animalId}}</h6>
+            <h6 class="font-weight-bold indigo-text py-2">Location: {{rangerId}}</h6>
+            <h6 class="font-weight-bold indigo-text py-2">Time: {{locationId}}</h6>
+
+
+            <form action="/sightings/{{id}}/delete" method="post">
+                <a href="/sightings/{{id}}/delete"><button class="btn btn-danger">Delete sighting</button></a>
+            </form>
+        </div>
+    {{/each}}
+</div>
+
+
+        <br>
+
+        <br>
+
+
+    </div>
+
+
+<div class="row text-center">
+    <a href="/sightings/new"><button class="btn btn-dark-green">Add New Sighting</button></a>
+</div>
+{{/partial}}
+{{> layout.hbs}}

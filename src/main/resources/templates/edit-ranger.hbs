@@ -1,0 +1,21 @@
+{{#partial "styles"}}
+    <link rel='stylesheet' href='/css/styles.css'>
+{{/partial}}
+{{#partial "content"}}
+<h1>Edit a Ranger</h1>
+
+<p>Edit ranger here:</p>
+
+<form action="/rangers/$ranger.getId()/edit" method="post">
+    <div class="form-group">
+        <label for="name">Ranger Name</label>
+        <input id="name" name="name" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="badge">Badge Number</label>
+        <input id="badge" name="badge" type="text" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-dark-green">Edit Ranger</button>
+</form>
+{{/partial}}
+{{> layout.hbs}}
