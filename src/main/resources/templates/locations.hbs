@@ -1,0 +1,33 @@
+{{#partial "styles"}}
+    <link rel='stylesheet' href='/css/styles.css'>
+{{/partial}}
+{{#partial "content"}}
+<h1>All locations</h1>
+
+<div class="container">
+    {{#each locations}}
+        <!-- Card content -->
+        <div class="card-body card-body-cascade text-center">
+
+            <h4 class="card-title"><strong>{{name}}</strong></h4>
+
+            <br>
+            <br>
+            <a href="/locations/{{id}}/edit"><button class="btn btn-unique">Edit location</button></a>
+            <form action="/locations/{{id}}/delete" method="post">
+                <a href="/locations/{{id}}/delete"><button class="btn btn-danger">Delete location</button></a>
+            </form>
+        </div>
+    {{/each}}
+</div>
+        <br>
+
+    </div>
+
+</div>
+
+<div class="row text-center">
+    <a href="/locations/new"><button class="btn btn-unique">Add New Location</button></a>
+</div>
+{{/partial}}
+{{> layout.hbs}}
